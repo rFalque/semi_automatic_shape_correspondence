@@ -1,0 +1,43 @@
+# input output file path data
+io_files:
+
+  target_ply: "../../data/body_tris_marching_cube_low.ply"
+  source_ply: "../../data/avatar_one_component.ply"
+  target_annotations: "../../data/body_tris.csv"
+  source_annotations: "../../data/avatar_one_component.csv"
+  output_ply: "../../data/output.ply"
+
+general_params:
+  verbose: true         # enable / disable the output (true / false)
+  visualization: true   # enable / disable the visualizations (true / false)
+  graph_provided: false  # skip the graph generation step (true / false)
+  correspondences_threshold: 200
+
+# Parameters for the embedded_deformation
+embedded_deformation:
+  # if true: load mesh; else: load pointCloud;
+  use_mesh: false
+
+  # needs the previous flag set as true
+  use_geodesic: false
+
+  # if use_farthest_sampling is not true, use voxel grid downsampling for creating the deformation graph
+  use_farthest_sampling: false
+  use_voxel_grid_sampling: true
+  use_relative: true
+  grid_size: 0.03
+  grid_resolution: 120
+  graph_connectivity: 6
+
+  # cost function weights
+  w_rot: 1
+  w_reg: 10
+  w_rig: 1000
+  w_con: 10
+
+visualization_params:
+  nodes_ratio: 50.0
+  edges_ratio: 200.0
+  graph_res: 30.0
+  nodes_color : [1.0, 0.1, 0.1]
+  edges_color : [0.1, 0.1, 0.1]
