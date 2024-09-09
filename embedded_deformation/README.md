@@ -17,7 +17,6 @@ sudo apt-get install git build-essential cmake libx11-dev mesa-common-dev libgl1
 ## Installation instruction
 To build, type into the console:
 ```bash
-git clone git@github.com:rFalque/human_morphing.git
 cd human_morphing/embedded_deformation
 mkdir build
 cd build
